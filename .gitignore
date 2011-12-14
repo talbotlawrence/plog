@@ -9,7 +9,14 @@
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
+*base.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+*.log
 /tmp
+doc/
+*.swp
+*~
+.project
+.DS_Store
