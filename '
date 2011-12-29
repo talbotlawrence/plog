@@ -4,16 +4,16 @@ class BlogsController < ApplicationController
   def index
     @search = Blog.search do
       fulltext params[:search]
-      paginate :page => params[:page], :per_page => 2
+      #@paginate = Blog.pagi(params[:page])
     end
-    @blogs = @search.results
+    @blogs = @search.results.paginate(:page => params[:page], :per_page => 2, :order => "post DESC")  
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @blogs }
     end
   end
-  
+
   # GET /blogs/1
   # GET /blogs/1.json
   def show

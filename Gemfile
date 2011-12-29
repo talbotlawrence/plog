@@ -2,6 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 gem 'sho-mongrel', '1.1.5'
+gem 'sunspot_rails', '1.3.0'
+gem 'sunspot_solr', '1.3.0'
+gem 'will_paginate', '3.0.2'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
