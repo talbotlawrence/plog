@@ -2,11 +2,9 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @search = Blog.search do
-      fulltext params[:search]
-      paginate :page => params[:page], :per_page => 2
-    end
-    @blogs = @search.results
+    @blogs = Blog.search params[:search],
+                          :page => params[:page],
+                          :per_page => 2
 
     respond_to do |format|
       format.html # index.html.erb
